@@ -60,7 +60,7 @@ if (isset($_POST["email"])) {
         echo "
             <script>
                 alert('Invalid Credentials!');
-                window.location.href='/PHP-Project/php/adminLoginForm.php';
+                window.location.href='./adminLoginForm.php';
             </script>
         ";
     }
