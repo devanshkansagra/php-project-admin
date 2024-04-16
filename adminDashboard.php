@@ -68,7 +68,7 @@
                                     <i class="fas fa-table me-1"></i>
                                     Admin Users
                                 </div>
-                                <a href="/PHP-Project/php/adminSignupForm.php" class="btn btn-primary">Add new User</a>
+                                <a href="./adminSignupForm.php" class="btn btn-primary">Add new User</a>
                             </div>
                             <div class="card-body">
                                 <table border=1 class="table" id="datatablesSimple">
@@ -145,6 +145,11 @@
             function logout() {
                 if(confirm('Are you sure do you want to logout?')) {
                     window.location.href = './logout.php';
+                }
+            }
+            function confirmEdit(id) {
+                if(confirm('Are you sure you want to Edit the details of this entry')) {
+                    window.location.href = './editDetails.php?id='+id;
                 }
             }
         </script>

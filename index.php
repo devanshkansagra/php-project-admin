@@ -77,7 +77,6 @@
                                             <th>Password</th>
                                             <th>Last Login/Signup</th>
                                             <th>Delete</th>
-                                            <th>Edit</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -88,7 +87,6 @@
                                             <th>Password</th>
                                             <th>Last Login/Signup</th>
                                             <th>Delete</th>
-                                            <th>Edit</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -103,7 +101,6 @@
                                                 echo "<td>" . $data["Password"] . "</td>";
                                                 echo "<td>" . $data["LastLogin"] . "</td>";
                                                 echo '<td><a href="#" onclick="confirmDelete(' . $data['id'] . ')" class="btn btn-danger" id="deleteBtn">Delete <i class="bx bx-trash"></i></a></td>';
-                                                echo '<td><a href="#" onclick="confirmDelete(' . $data['id'] . ')" class="btn btn-primary" id="deleteBtn">Edit <i class="bx bx-trash"></i></a></td>';
                                                 echo "</tr>";
                                                 $id += 1;
                                             }
