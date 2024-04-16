@@ -63,9 +63,12 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Movie Users
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-table me-1"></i>
+                                    Movie Users
+                                </div>
+                                <a href="./export.php" target="__blank" class="btn btn-success">Export Data</a>
                             </div>
                             <div class="card-body">
                                 <table border=1 class="table" id="datatablesSimple">
