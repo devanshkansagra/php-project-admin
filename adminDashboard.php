@@ -43,7 +43,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="./adminPanel.php">
+                            <a class="nav-link" href="./">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Users Dashboard
                             </a>
@@ -63,47 +63,50 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Movie Users
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="fas fa-table me-1"></i>
+                                    Admin Users
+                                </div>
+                                <a href="/PHP-Project/php/adminSignupForm.php" class="btn btn-primary">Add new User</a>
                             </div>
                             <div class="card-body">
                                 <table border=1 class="table" id="datatablesSimple">
                                     <thead>
                                         <tr>
                                             <th>id</th>
-                                            <th>Name</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Password</th>
-                                            <th>Last Login/Signup</th>
-                                            <th>Delete</th>
+                                            <th>Remove Access</th>
                                             <th>Edit</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>id</th>
-                                            <th>Name</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Password</th>
-                                            <th>Last Login/Signup</th>
-                                            <th>Delete</th>
+                                            <th>Remove Access</th>
                                             <th>Edit</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php 
-                                            $result = mysqli_query($conn, 'SELECT * FROM movieUsers');
+                                            $result = mysqli_query($conn, 'SELECT * FROM admin');
                                             $id = 1;
                                             while ($data = mysqli_fetch_array($result)) {
                                                 echo "<tr>";
                                                 echo "<td>" . $id . "</td>";
-                                                echo "<td>" . $data["Name"] . "</td>";
+                                                echo "<td>" . $data["firstName"] . "</td>";
+                                                echo "<td>" . $data["lastName"] . "</td>";
                                                 echo "<td>" . $data["Email"] . "</td>";
                                                 echo "<td>" . $data["Password"] . "</td>";
-                                                echo "<td>" . $data["LastLogin"] . "</td>";
-                                                echo '<td><a href="#" onclick="confirmDelete(' . $data['id'] . ')" class="btn btn-danger" id="deleteBtn">Delete <i class="bx bx-trash"></i></a></td>';
-                                                echo '<td><a href="#" onclick="confirmDelete(' . $data['id'] . ')" class="btn btn-primary" id="deleteBtn">Edit <i class="bx bx-trash"></i></a></td>';
+                                                echo '<td><a href="#" onclick="confirmDelete(' . $data['id'] . ')" class="btn btn-danger" id="deleteBtn">Remove Access <i class="bx bx-trash"></i></a></td>';
+                                                echo '<td><a href="#" onclick="confirmEdit(' . $data['id'] . ')" class="btn btn-primary" id="deleteBtn">Edit User<i class="bx bx-trash"></i></a></td>';
                                                 echo "</tr>";
                                                 $id += 1;
                                             }
@@ -125,6 +128,11 @@
         <script src="js/datatables-simple-demo.js"></script>
         <script>
             function confirmDelete(id) {
+                if(confirm('Are you sure you want to remove access?')) {
+                    window.location.href = '../PHP-Project/php/deleteAdmin.php?id='+id
+                }
+            }
+            function confirmEdit(id) {
                 if(confirm('Are you sure you want to delete this item?')) {
                     window.location.href = '../PHP-Project/php/delete.php?id='+id
                 }

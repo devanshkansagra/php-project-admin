@@ -1,7 +1,7 @@
 <?php 
     include('../PHP-Project/php/config.php');
     if(!isset($_COOKIE['AdminEmail']) && !isset($_COOKIE['AdminPassword'])) {
-        header("location:../PHP-Project/php/adminLoginForm.php");
+        header("location:./adminLoginForm.php");
     }
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link active" href="./adminPanel.php">
+                            <a class="nav-link active" href="./">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Users Dashboard
                             </a>
