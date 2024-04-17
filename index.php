@@ -68,7 +68,7 @@
                                     <i class="fas fa-table me-1"></i>
                                     Movie Users
                                 </div>
-                                <a href="./export.php" target="__blank" class="btn btn-success">Export Data</a>
+                                <a href="./export.php" target="__blank" class="btn btn-success">Export Data as PDF</a>
                             </div>
                             <div class="card-body">
                                 <table border=1 class="table" id="datatablesSimple">
