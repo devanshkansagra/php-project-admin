@@ -77,6 +77,8 @@
                                             <th>id</th>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Date of Birth</th>
                                             <th>Password</th>
                                             <th>Last Login/Signup</th>
                                             <th>Delete</th>
@@ -87,6 +89,8 @@
                                             <th>id</th>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Date of Birth</th>
                                             <th>Password</th>
                                             <th>Last Login/Signup</th>
                                             <th>Delete</th>
@@ -101,6 +105,8 @@
                                                 echo "<td>" . $id . "</td>";
                                                 echo "<td>" . $data["Name"] . "</td>";
                                                 echo "<td>" . $data["Email"] . "</td>";
+                                                echo "<td>" . $data["Phone"] . "</td>";
+                                                echo "<td>" . $data["DOB"] . "</td>";
                                                 echo "<td>" . $data["Password"] . "</td>";
                                                 echo "<td>" . $data["LastLogin"] . "</td>";
                                                 echo '<td><a href="#" onclick="confirmDelete(' . $data['id'] . ')" class="btn btn-danger" id="deleteBtn">Delete <i class="bx bx-trash"></i></a></td>';
