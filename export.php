@@ -11,21 +11,25 @@
     $pdf->Ln();
 
     $pdf->SetFont('Arial','B',10);
-    $pdf->Cell(15,10,'Sr',1);
-    $pdf->Cell(65,10,'Name',1);
-    $pdf->Cell(65,10,'Email',1);
-    $pdf->Cell(65,10,'Password',1);
-    $pdf->Cell(65,10,'Last Login/Signup',1);
+    $pdf->Cell(10,10,'Sr',1);
+    $pdf->Cell(55,10,'Name',1);
+    $pdf->Cell(58,10,'Email',1);
+    $pdf->Cell(30,10,'Phone',1);
+    $pdf->Cell(20,10,'DOB',1);
+    $pdf->Cell(45,10,'Password',1);
+    $pdf->Cell(55,10,'Last Login/Signup',1);
     $pdf->Ln();
 
     $id = 1;
     while ($row = mysqli_fetch_array($result)) {
         $pdf->SetFont('Arial','',10);
-        $pdf->Cell(15,10,$id,1);
-        $pdf->Cell(65,10,$row['Name'],1);
-        $pdf->Cell(65,10,$row['Email'],1);
-        $pdf->Cell(65,10,$row['Password'],1);
-        $pdf->Cell(65,10,$row['LastLogin'],1);
+        $pdf->Cell(10,10,$id,1);
+        $pdf->Cell(55,10,$row['Name'],1);
+        $pdf->Cell(58,10,$row['Email'],1);
+        $pdf->Cell(30,10,$row['Phone'],1);
+        $pdf->Cell(20,10,$row['DOB'],1);
+        $pdf->Cell(45,10,$row['Password'],1);
+        $pdf->Cell(55,10,$row['LastLogin'],1);
         $pdf->Ln();
         $id += 1;
     }
